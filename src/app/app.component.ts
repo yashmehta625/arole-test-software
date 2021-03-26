@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'arole-test-software';
+
+  select(event: any): void{
+    console.log("Event", event);
+  } 
 }
