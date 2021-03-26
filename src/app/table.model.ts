@@ -5,3 +5,12 @@ export interface ITable {
     color: string;
 }
 
+export class Table implements ITable{
+    constructor(
+        public id: number,
+        public name: string,
+        public icons: string,
+        public color: string,
+    ){}
+}
+
