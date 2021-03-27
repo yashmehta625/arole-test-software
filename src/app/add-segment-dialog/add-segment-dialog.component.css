@@ -1,0 +1,27 @@
+.header{
+    font-family: 'Inter';
+    font-weight: bold;
+    margin-bottom: 35px;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group>input {
+    cursor: pointer;
+}
+
+.dropdown-toggle {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    bottom: 0;
+}
+
+.close-button{
+    float: right;
+    color: #888888;
+    height: 12px;
+    width: 12px;
+}

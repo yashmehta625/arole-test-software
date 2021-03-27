@@ -1,0 +1,51 @@
+.header{
+    font-family: 'Inter';
+    font-weight: bold;
+    margin-bottom: 35px;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-group>input {
+    cursor: pointer;
+}
+
+.dropdown-toggle {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    bottom: 0;
+}
+
+.close-button{
+    float: right;
+    color: #888888;
+    height: 12px;
+    width: 12px;
+}
+
+.color{
+    position: absolute;
+    left: 0;
+    top: 10px;
+    bottom: 10px;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+}
+
+input[type=color]::-webkit-color-swatch {
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+}
+
+input[type=color]::-webkit-color-swatch-wrapper {
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    width: 25px;
+    height: 25px;
+}

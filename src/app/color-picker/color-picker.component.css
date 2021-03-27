@@ -1,0 +1,16 @@
+.color-picker{
+    width: 225px;
+}
+
+.colors{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.color{
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    margin: 10px;
+}

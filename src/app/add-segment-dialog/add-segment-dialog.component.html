@@ -1,15 +1,24 @@
-<h2 mat-dialog-title>Add a segment</h2>
+<mat-icon mat-dialog-close class="close-button cursor-pointer">close</mat-icon>
+<h2 class="header" mat-dialog-title>Add a segment</h2>
+
 <form [formGroup]="segmentForm" (ngSubmit)="onSubmit()">
     <mat-dialog-content>
-        <label for="fname">Name*</label>
-        <input type="text" id="fname" name="fname">
-        <label for="fname">Icon</label>
-        <input type="text" id="fname" name="fname">
+        <label class="input-label" for="fname">Name*</label>
+        <input placeholder="Ex.Computer Software" type="text" id="name" name="name" formControlName="name"/>
 
-
+        <label class="input-label" for="fname">Icon</label>
+        <div [matMenuTriggerFor]="menu" class="input-group">
+            <input type="text" id="icons" name="icons" formControlName="icons" readonly/>
+            <mat-icon aria-hidden="false" class="dropdown-toggle">keyboard_arrow_down</mat-icon>
+            <mat-menu #menu="matMenu" overlapTrigger="false" direction="bottom">
+                <emoji-mart class="w-100" (emojiSelect)="select($event)"></emoji-mart>
+            </mat-menu>
+        </div>
+        <label class="input-label" for="description">Description</label>
+        <textarea id="description" name="description" formControlName="description" rows="5"></textarea>
     </mat-dialog-content>
     <mat-dialog-actions>
-        <button mat-button mat-dialog-close>Cancel</button>
-        <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button>
+        <button mat-raised-button color="primary" [disabled]="segmentForm.invalid" [mat-dialog-close]="true" type="submit">Submit</button>
+        <button mat-stroked-button color="primary" mat-dialog-close>Cancel</button>
     </mat-dialog-actions>
 </form>

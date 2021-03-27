@@ -23,16 +23,36 @@
     <div class="px-20 py-20" style="margin-bottom: auto;">
       <span class="fs-14-bold-grey">SEGMENT</span>
       <ul class="list-style-type-none p-0">
-        <li class="py-10 fs-14-bold-black cursor-pointer">🖖 Segment 1</li>
-        <li class="py-10 fs-14-bold-black cursor-pointer">🌼  Segment 1</li>
-        <li class="py-10 fs-14-bold-black cursor-pointer">🖖 Segment 1</li>
-        <li class="py-10 fs-14-bold-black cursor-pointer">🖖 Segment 1</li>
-        <li class="py-10 fs-14-bold-black cursor-pointer">🖖 Segment 1</li>
+        <li *ngFor="let segment of segments; let i = index" class="py-10 fs-14-bold-black cursor-pointer">
+            {{segment.icons + ' '}} {{segment.name}}
+        </li>
       </ul>
     </div>
-    <button mat-raised-button color="primary" class="add-segment-button">+ Add Segment</button>
+    <button mat-raised-button color="primary" class="add-segment-button" (click)="openAddSegmentDialog()">+ Add Segment</button>
   </div>
   <div class="main">
-    <emoji-mart (emojiSelect)="select($event)"></emoji-mart>
+    <div class="top-nav">
+      <ul class="list-style-type-none d-flex align-items-center p-0 my-0 ml-auto" style="margin-right: -50px;">
+        <li class="d-flex align-items-center"><img src="./../assets/list_view.png" style="margin-right: 0.5em;"><img src="./../assets/dropdown-toggle.png"></li>
+        <li><img src="./../assets/dummy_icons.png"></li>
+      </ul>
+    </div>
+  </div>
+  <div class="content">
+    <div class="segment-list" *ngFor="let segment of segments; let i = index">
+        <div class="segment-heading">{{segment.icons + ' '}}{{segment.name}}
+          <mat-icon aria-hidden="false" [class]="segment.show ? 'dropdown-toggle active' : 'dropdown-toggle'" (click)="segment.show = !segment.show">keyboard_arrow_down</mat-icon>
+        </div>
+        <div *ngIf="segment.show" class="segment-items">
+          <div class="segment-item" *ngFor="let table of segment.tables">
+            <div [style.border-color]="table.color" class="box">{{table.icons}}</div>
+            <div class="text">{{table.name}}</div>
+          </div>
+          <div class="segment-item">
+            <div (click)="openAddTableDialog(i)" class="box">+</div>
+            <div class="text"></div>
+          </div>
+        </div>
+    </div>
   </div>
 </div>

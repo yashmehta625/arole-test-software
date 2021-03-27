@@ -3,61 +3,18 @@
     height: 100%;
     display: flex;
     font-family: 'Inter';
-    
     @supports (display: grid) {
-      display: grid;
-      grid-template-columns: 75px 250px 1fr;
-      grid-template-rows: 1fr;
+        display: grid;
+        grid-template-columns: 75px 250px 1fr;
+        grid-template-rows: 1fr;
     }
 }
 
-.fs-14-bold-grey{
-    font-size: 14px;
-    font-weight: bold;
-    color: rgba(60, 60, 60, 0.7);
-}
-
-.fs-14-bold-black{
-    font-size: 14px;
-    font-weight: bold;
-    color: #181818;
-}
-
-.fs-30-bold{
-    font-size: 30px;
-    font-weight: bold;
-    margin-bottom: 0px;
-}
-
-.m-0{
-    margin: 0px
-}
-
-.p-0{
-    padding: 0px
-}
-
-.px-20{
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.py-10{
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-
-.py-20{
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.list-style-type-none{
+.list-style-type-none {
     list-style-type: none;
 }
 
-.cursor-pointer{
+.cursor-pointer {
     cursor: pointer;
 }
 
@@ -74,19 +31,19 @@
     background: #E8E8E8;
 }
 
-.sidebar-item{
+.sidebar-item {
     display: flex;
     justify-content: center;
     margin: 2em 0;
 }
 
-.align-start{
+.align-start {
     margin-top: 2em;
     margin-bottom: auto;
     justify-self: flex-end;
 }
 
-.menu{
+.menu {
     width: 20%;
     left: 4%;
     top: 0;
@@ -97,7 +54,7 @@
     flex-direction: column;
 }
 
-.main{
+.main {
     width: 76%;
     left: 24%;
     top: 0;
@@ -106,49 +63,118 @@
     display: flex;
 }
 
-.header{
+.header {
     padding: 30px;
 }
 
-input#search{
+input#search {
     width: 100%;
     height: 35px;
     border: 1px solid #cccccc;
     border-radius: 2px;
 }
 
-input#search::placeholder{
+input#search::placeholder {
     font-weight: bold;
     font-size: 14px;
     display: flex;
     align-items: center;
     color: rgba(60, 60, 60, 0.5);
-    opacity: 1; /* Firefox */
-}
-  
-input#search:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    font-weight: bold;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    color: rgba(60, 60, 60, 0.5);
-    opacity: 1; /* Firefox */
-}
-  
-input#search::-ms-input-placeholder { /* Microsoft Edge */
-    font-weight: bold;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    color: rgba(60, 60, 60, 0.5);
-    opacity: 1; /* Firefox */
+    opacity: 1;
+    /* Firefox */
 }
 
-.add-segment-button{
+input#search:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: rgba(60, 60, 60, 0.5);
+    opacity: 1;
+    /* Firefox */
+}
+
+input#search::-ms-input-placeholder {
+    /* Microsoft Edge */
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    color: rgba(60, 60, 60, 0.5);
+    opacity: 1;
+    /* Firefox */
+}
+
+.add-segment-button {
     text-align: left;
     margin: 2.75em 0.75em;
 }
 
+.top-nav {
+    position: fixed;
+    left: 24%;
+    right: 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #CCCCCC;
+    margin-left: 50px;
+    margin-right: 50px;
+}
 
+.content {
+    position: absolute;
+    right: 0;
+    left: 24%;
+    top: 80px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
 
+.segment-list {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
 
+.segment-heading {
+    font-family: 'Inter';
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.segment-items{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.segment-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box{
+    border: 2px solid #3C3C3C;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1.25em;
+    padding: 2em;
+    font-size: 16px;
+}
+
+.box:hover {
+    color: #334BFA;
+    border-color: #334BFA;
+    box-shadow: 0px 5px 5px rgba(51, 75, 250, 0.25);
+}
+
+.text{
+    font-family: 'Inter';
+    font-weight: 600;
+    font-size: 14px;
+    max-width: 80px;
+}
